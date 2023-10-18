@@ -1,0 +1,10 @@
+{
+  "name": "tooq",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Oliver Yasuna",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {}
+}
