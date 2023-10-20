@@ -1,0 +1,18 @@
+{
+  "extends": "./tsconfig.json",
+  "references": [
+    {"path": "../utils/tsconfig.build.json"}
+  ],
+  "compilerOptions": {
+    // Modules
+    //--------------------------------------------------
+
+    "rootDir": "./src",
+
+    // Emit
+    //--------------------------------------------------
+
+    "emitDeclarationOnly": true,
+    "outDir": "./dist"
+  }
+}

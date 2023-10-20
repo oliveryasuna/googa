@@ -1,10 +1,19 @@
 {
-  "name": "tooq",
+  "name": "googa",
   "version": "1.0.0",
   "private": true,
   "author": "Oliver Yasuna",
   "type": "module",
-  "scripts": {},
-  "dependencies": {},
-  "devDependencies": {}
+  "workspaces": [
+    "./packages/*"
+  ],
+  "devDependencies": {
+    "@lerna-lite/cli": "^2.6.0",
+    "@lerna-lite/run": "^2.6.0",
+    "@typescript-eslint/eslint-plugin": "^6.8.0",
+    "@typescript-eslint/parser": "^6.8.0",
+    "eslint": "^8.51.0",
+    "nx": "^16.10.0",
+    "tsup": "^7.2.0"
+  }
 }

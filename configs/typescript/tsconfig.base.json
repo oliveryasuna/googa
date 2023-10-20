@@ -1,0 +1,63 @@
+{
+  "compilerOptions": {
+    // Type checking
+    //--------------------------------------------------
+
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "alwaysStrict": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "useUnknownInCatchVariables": true,
+
+    // Modules
+    //--------------------------------------------------
+
+    "module": "ESNext",
+    "moduleResolution": "node",
+
+    // Emit
+    //--------------------------------------------------
+
+    "declaration": true,
+    "declarationMap": true,
+    "importHelpers": true,
+    "sourceMap": true,
+
+    // Interop constraints
+    //--------------------------------------------------
+
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Language and environment
+    //--------------------------------------------------
+
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "ESNext",
+
+    // Projects
+    //--------------------------------------------------
+
+    "incremental": true,
+
+    // Completeness
+    //--------------------------------------------------
+
+    "skipLibCheck": true
+  }
+}

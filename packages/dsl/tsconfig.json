@@ -1,0 +1,23 @@
+{
+  "extends": "../../configs/typescript/tsconfig.library.json",
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "./node_modules",
+    "./dist"
+  ],
+  "references": [
+    {"path": "../utils/tsconfig.json"}
+  ],
+  "compilerOptions": {
+    // Modules
+    //--------------------------------------------------
+
+    "baseUrl": "./",
+    "paths": {
+      "@tooq/utils": ["../utils/src"],
+      "@tooq/utils/*": ["../utils/src/*"]
+    }
+  }
+}

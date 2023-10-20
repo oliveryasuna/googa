@@ -1,0 +1,25 @@
+{
+  "name": "@type-twist/utils",
+  "version": "1.0.0",
+  "author": "Oliver Yasuna",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./*": "./dist/*",
+    "./src/*": "./src/*"
+  },
+  "files": [
+    "./dist/*",
+    "./README.md",
+    "../../LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup"
+  }
+}
