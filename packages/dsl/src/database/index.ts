@@ -1,3 +1,4 @@
+export * from './impl';
 export * from './_key';
 export * from './_named';
 export * from './catalog';
