@@ -7,17 +7,10 @@
     "./node_modules",
     "./dist"
   ],
-  "references": [
-    {"path": "../database-core/tsconfig.build.json"}
-  ],
   "compilerOptions": {
     // Modules
     //--------------------------------------------------
 
-    "baseUrl": "./",
-    "paths": {
-      "@tooq/database-core": ["../database-core/src"],
-      "@tooq/database-core/*": ["../database-core/src/*"]
-    }
+    "baseUrl": "./"
   }
 }

@@ -23,6 +23,6 @@
     "build": "tsup"
   },
   "dependencies": {
-    "@tooq/utils": "workspace:^"
+    "@googa/utils": "workspace:^"
   }
 }

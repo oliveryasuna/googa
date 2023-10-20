@@ -16,8 +16,8 @@
 
     "baseUrl": "./",
     "paths": {
-      "@tooq/utils": ["../utils/src"],
-      "@tooq/utils/*": ["../utils/src/*"]
+      "@googa/utils": ["../utils/src"],
+      "@googa/utils/*": ["../utils/src/*"]
     }
   }
 }
