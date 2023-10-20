@@ -1,6 +1,6 @@
-import type {_Named} from './_named';
+import type {Named} from '../dsl';
 
-type _Key = (_Named & {
+type _Key = (Named & {
   isDeferrable: boolean,
   isInitiallyDeferred: boolean
 });

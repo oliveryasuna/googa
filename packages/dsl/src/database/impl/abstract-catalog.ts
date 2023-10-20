@@ -1,8 +1,8 @@
-import {_AbstractNamed} from './_abstract-named';
+import {AbstractNamed} from '../../dsl';
 import type {Catalog as CatalogType} from '../catalog';
 import type {Schema} from '../schema';
 
-abstract class AbstractCatalog<Catalog extends CatalogType<Catalog>> extends _AbstractNamed implements CatalogType<Catalog> {
+abstract class AbstractCatalog<Catalog extends CatalogType<Catalog>> extends AbstractNamed implements CatalogType<Catalog> {
 
   private readonly __schemas: Schema<any, Catalog>[];
 

@@ -1,10 +1,10 @@
 import type {Schema as SchemaType} from '../schema';
 import type {Catalog as CatalogType} from '../catalog';
-import {_AbstractNamed} from './_abstract-named';
+import {AbstractNamed} from '../../dsl';
 import type {Table} from '../table';
 
 abstract class AbstractSchema<Schema extends SchemaType<Schema, Catalog>, Catalog extends CatalogType<Catalog>>
-    extends _AbstractNamed
+    extends AbstractNamed
     implements SchemaType<Schema, Catalog> {
 
   private readonly __catalog: Catalog;
@@ -12,7 +12,7 @@ abstract class AbstractSchema<Schema extends SchemaType<Schema, Catalog>, Catalo
   private readonly __tables: Table<any, Catalog, Schema>[];
 
   public constructor(name: string, comment: string, catalog: Catalog, tables: Table<any, Catalog, Schema>[]) {
-    super(_AbstractNamed.qualify(catalog, name), comment);
+    super(AbstractNamed.qualify(catalog, name), comment);
 
     this.__catalog = catalog;
     this.__tables = tables;

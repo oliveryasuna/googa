@@ -192,13 +192,13 @@
         "prefer-spread": "error",
         "prefer-template": "error",
         "require-await": "error",
-        "sort-imports": [
-          "error",
-          {
-            "ignoreCase": true,
-            "ignoreDeclarationSort": true
-          }
-        ],
+        //        "sort-imports": [
+        //          "error",
+        //          {
+        //            "ignoreCase": true,
+        //            "ignoreDeclarationSort": true
+        //          }
+        //        ],
         //        "spaced-comment": "error",
         "strict": "error",
         "symbol-description": "error",

@@ -1,13 +1,13 @@
 import type {Table as TableType} from '../table';
 import type {Catalog as CatalogType} from '../catalog';
 import type {Schema as SchemaType} from '../schema';
-import {_AbstractNamed} from './_abstract-named';
+import {AbstractNamed} from '../../dsl';
 import type {Column} from '../column';
 import type {UniqueKey} from '../unique-key';
 import type {ForeignKey} from '../foreign-key';
 
 abstract class AbstractTable<Table extends TableType<Table, Catalog, Schema>, Catalog extends CatalogType<Catalog>, Schema extends SchemaType<Schema, Catalog>>
-    extends _AbstractNamed
+    extends AbstractNamed
     implements TableType<Table, Catalog, Schema> {
 
   private readonly __schema: Schema;
@@ -29,13 +29,17 @@ abstract class AbstractTable<Table extends TableType<Table, Catalog, Schema>, Ca
       uniqueKeys: UniqueKey<Table, Catalog, Schema>[],
       foreignKeys: ForeignKey<Table, Schema, any, any, Catalog>[]
   ) {
-    super(_AbstractNamed.qualify(schema, name), comment);
+    super(AbstractNamed.qualify(schema, name), comment);
 
     this.__schema = schema;
     this.__columns = columns;
     this.__primaryKey = primaryKey;
     this.__uniqueKeys = uniqueKeys;
     this.__foreignKeys = foreignKeys;
+  }
+
+  public toSql(): string {
+    return this.name;
   }
 
   public get schema(): Schema {

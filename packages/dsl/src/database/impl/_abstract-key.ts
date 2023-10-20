@@ -1,7 +1,7 @@
-import {_AbstractNamed} from './_abstract-named';
+import {AbstractNamed} from '../../dsl';
 import type {_Key} from '../_key';
 
-abstract class _AbstractKey extends _AbstractNamed implements _Key {
+abstract class _AbstractKey extends AbstractNamed implements _Key {
 
   private readonly __isDeferrable: boolean;
 

@@ -1,7 +1,7 @@
 import type {Schema} from './schema';
-import type {_Named} from './_named';
+import type {Named} from '../dsl';
 
-type Catalog<This extends Catalog<This>> = (_Named & {
+type Catalog<This extends Catalog<This>> = (Named & {
   schemas: Schema<any, This>[]
 });
 

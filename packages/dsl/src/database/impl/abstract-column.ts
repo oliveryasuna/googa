@@ -1,7 +1,7 @@
 import type {Table as TableType} from '../table';
 import type {Catalog as CatalogType} from '../catalog';
 import type {Schema as SchemaType} from '../schema';
-import {_AbstractNamed} from './_abstract-named';
+import {AbstractField, AbstractNamed} from '../../dsl';
 import type {Column} from '../column';
 
 abstract class AbstractColumn<
@@ -10,7 +10,7 @@ abstract class AbstractColumn<
     Schema extends SchemaType<Schema, Catalog>,
     Type
 >
-    extends _AbstractNamed
+    extends AbstractField<Type>
     implements Column<Table, Catalog, Schema, Type> {
 
   private readonly __table: Table;
@@ -18,10 +18,14 @@ abstract class AbstractColumn<
   private readonly __type: Type;
 
   public constructor(name: string, comment: string, table: Table, type: Type) {
-    super(_AbstractNamed.qualify(table, name), comment);
+    super(AbstractNamed.qualify(table, name), comment);
 
     this.__table = table;
     this.__type = type;
+  }
+
+  public override toSql(): string {
+    return this.name;
   }
 
   public get table(): Table {

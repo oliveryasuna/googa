@@ -4,7 +4,7 @@ import type {Table as TableType} from '../table';
 import type {Catalog as CatalogType} from '../catalog';
 import type {Schema as SchemaType} from '../schema';
 import type {Column} from '../column';
-import {_AbstractNamed} from './_abstract-named';
+import {AbstractNamed} from '../../dsl';
 
 abstract class AbstractUniqueKey<
     Table extends TableType<Table, Catalog, Schema>,
@@ -21,7 +21,7 @@ abstract class AbstractUniqueKey<
   private readonly __isPrimary: boolean;
 
   public constructor(name: string, comment: string, table: Table, columns: Column<Table, Catalog, Schema, unknown>[], isPrimary: boolean) {
-    super(_AbstractNamed.qualify(table, name), comment, false, false);
+    super(AbstractNamed.qualify(table, name), comment, false, false);
 
     this.__table = table;
     this.__columns = columns;

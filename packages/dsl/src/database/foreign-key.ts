@@ -4,12 +4,12 @@ import type {Schema} from './schema';
 import type {_Key} from './_key';
 import type {Column} from './column';
 
-type ReferentialAction =
+type ReferentialAction = (
     | 'cascade'
     | 'no action'
     | 'restrict'
     | 'set default'
-    | 'set null';
+    | 'set null');
 
 type ForeignKey<
     SourceTable extends Table<SourceTable, Catalog, SourceSchema>,
