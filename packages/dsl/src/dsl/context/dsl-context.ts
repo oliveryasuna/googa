@@ -1,4 +1,4 @@
-import type {SelectSelectStep, SelectWhereStep} from '../select-query';
+import type {SelectSelectStep, SelectWhereStep} from '../query/select-query';
 import type {Record as RecordType, Record1, Record2} from '../record';
 import type {SelectField, SelectFieldOrAsterisk} from '../field';
 import type {TableLike} from '../table-like';

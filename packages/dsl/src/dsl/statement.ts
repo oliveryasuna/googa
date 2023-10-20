@@ -1,4 +1,4 @@
-import type {QueryPart} from './query-part';
+import type {QueryPart} from './query/query-part';
 
 type Statement = (QueryPart & {});
 
