@@ -1,10 +1,10 @@
 import type {SelectIntoStep} from './select-into-step';
 import type {Record as RecordType} from '../../record';
-import type {SelectField} from '../../field';
+import type {SelectFieldOrAsterisk} from '../../field';
 
 type SelectDistinctOnStep<Record extends RecordType> = (SelectIntoStep<Record> & {
-  on(...fields: SelectField<any>[]): SelectIntoStep<Record>,
-  distinctOn(...fields: SelectField<any>[]): SelectIntoStep<Record>
+  on(...fields: SelectFieldOrAsterisk[]): SelectIntoStep<Record>,
+  distinctOn(...fields: SelectFieldOrAsterisk[]): SelectIntoStep<Record>
 });
 
 export type {
