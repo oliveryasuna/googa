@@ -1,30 +1,32 @@
 import type {Record as RecordType} from '../../record';
 import type {SelectJoinStep} from './select-join-step';
+import type {Condition} from '../../condition';
+import type {Field} from '../../field';
+import type {SelectQuery} from './select-query';
 
 type SelectOnConditionStep<Record extends RecordType> = (SelectJoinStep<Record> & {
-  // TODO: and.
-  and(): SelectOnConditionStep<Record>,
+  and(condition: Condition): SelectOnConditionStep<Record>,
+  // TODO: Add null/undefined to boolean?
+  and(condition: Field<boolean>): SelectOnConditionStep<Record>,
 
-  // TODO: andNot.
-  andNot(): SelectOnConditionStep<Record>,
+  andNot(condition: Condition): SelectOnConditionStep<Record>,
+  // TODO: Add null/undefined to boolean?
+  andNot(condition: Field<boolean>): SelectOnConditionStep<Record>,
 
-  // TODO: andExists.
-  andExists(): SelectOnConditionStep<Record>,
+  andExists(condition: SelectQuery<any>): SelectOnConditionStep<Record>,
 
-  // TODO: andNotExists.
-  andNotExists(): SelectOnConditionStep<Record>,
+  andNotExists(condition: SelectQuery<any>): SelectOnConditionStep<Record>,
 
-  // TODO: or.
-  or(): SelectOnConditionStep<Record>,
+  or(condition: Condition): SelectOnConditionStep<Record>,
+  // TODO: Add null/undefined to boolean?
+  or(condition: Field<boolean>): SelectOnConditionStep<Record>,
 
-  // TODO: orNot.
-  orNot(): SelectOnConditionStep<Record>,
+  orNot(condition: Condition): SelectOnConditionStep<Record>,
+  // TODO: Add null/undefined to boolean?
+  orNot(condition: Field<boolean>): SelectOnConditionStep<Record>,
 
-  // TODO: orExists.
-  orExists(): SelectOnConditionStep<Record>,
-
-  // TODO: orNotExists.
-  orNotExists(): SelectOnConditionStep<Record>
+  orExists(condition: SelectQuery<any>): SelectOnConditionStep<Record>,
+  orNotExists(condition: SelectQuery<any>): SelectOnConditionStep<Record>
 });
 
 export type {
