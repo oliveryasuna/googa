@@ -1,2 +1,2 @@
 export * from './abstract-entry';
-export * from './record-impl';
+export * from './entry-impl-1';
