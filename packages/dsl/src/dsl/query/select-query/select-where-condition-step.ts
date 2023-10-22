@@ -1,30 +1,30 @@
 import type {SelectGroupByStep} from './select-group-by-step';
 import type {Entry as EntryType} from '../../entry';
 
-type SelectWhereConditionStep<Record extends EntryType> = (SelectGroupByStep<Record> & {
+type SelectWhereConditionStep<Entry extends EntryType> = (SelectGroupByStep<Entry> & {
   // TODO: and.
-  and(): SelectWhereConditionStep<Record>,
+  and(): SelectWhereConditionStep<Entry>,
 
   // TODO: andNot.
-  andNot(): SelectWhereConditionStep<Record>,
+  andNot(): SelectWhereConditionStep<Entry>,
 
   // TODO: andExists.
-  andExists(): SelectWhereConditionStep<Record>,
+  andExists(): SelectWhereConditionStep<Entry>,
 
   // TODO: andNotExists.
-  andNotExists(): SelectWhereConditionStep<Record>,
+  andNotExists(): SelectWhereConditionStep<Entry>,
 
   // TODO: or.
-  or(): SelectWhereConditionStep<Record>,
+  or(): SelectWhereConditionStep<Entry>,
 
   // TODO: orNot.
-  orNot(): SelectWhereConditionStep<Record>,
+  orNot(): SelectWhereConditionStep<Entry>,
 
   // TODO: orExists.
-  orExists(): SelectWhereConditionStep<Record>,
+  orExists(): SelectWhereConditionStep<Entry>,
 
   // TODO: orNotExists.
-  orNotExists(): SelectWhereConditionStep<Record>
+  orNotExists(): SelectWhereConditionStep<Entry>
 });
 
 export type {

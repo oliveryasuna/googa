@@ -3,24 +3,24 @@ import type {SelectForUpdateOfStep} from './select-for-update-of-step';
 import type {SelectFinalStep} from './select-final-step';
 import type {Entry as EntryType} from '../../entry';
 
-type SelectForUpdateStep<Record extends EntryType> = (SelectForStep<Record> & {
+type SelectForUpdateStep<Entry extends EntryType> = (SelectForStep<Entry> & {
   // TODO: forUpdate.
-  forUpdate(): SelectForUpdateOfStep<Record>,
+  forUpdate(): SelectForUpdateOfStep<Entry>,
 
   // TODO: forNoKeyUpdate.
-  forNoKeyUpdate(): SelectForUpdateOfStep<Record>,
+  forNoKeyUpdate(): SelectForUpdateOfStep<Entry>,
 
   // TODO: forShare.
-  forShare(): SelectForUpdateOfStep<Record>,
+  forShare(): SelectForUpdateOfStep<Entry>,
 
   // TODO: forKeyShare.
-  forKeyShare(): SelectForUpdateOfStep<Record>,
+  forKeyShare(): SelectForUpdateOfStep<Entry>,
 
   // TODO: withCheckOption.
-  withCheckOption(): SelectFinalStep<Record>,
+  withCheckOption(): SelectFinalStep<Entry>,
 
   // TODO: withReadOnly.
-  withReadOnly(): SelectFinalStep<Record>
+  withReadOnly(): SelectFinalStep<Entry>
 });
 
 export type {

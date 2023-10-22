@@ -3,12 +3,12 @@ import type {SelectLimitPercentStep} from './select-limit-percent-step';
 import type {SelectLimitAfterOffsetStep} from './select-limit-after-offset-step';
 import type {Entry as EntryType} from '../../entry';
 
-type SelectLimitStep<Record extends EntryType> = (SelectForUpdateStep<Record> & {
+type SelectLimitStep<Entry extends EntryType> = (SelectForUpdateStep<Entry> & {
   // TODO: limit.
-  limit(): SelectLimitPercentStep<Record>,
+  limit(): SelectLimitPercentStep<Entry>,
 
   // TODO: offset.
-  offset(): SelectLimitAfterOffsetStep<Record>
+  offset(): SelectLimitAfterOffsetStep<Entry>
 });
 
 export type {

@@ -1,30 +1,30 @@
 import type {SelectOrderByStep} from './select-order-by-step';
 import type {Entry as EntryType} from '../../entry';
 
-type SelectQualifyConditionStep<Record extends EntryType> = (SelectOrderByStep<Record> & {
+type SelectQualifyConditionStep<Entry extends EntryType> = (SelectOrderByStep<Entry> & {
   // TODO: and.
-  and(): SelectQualifyConditionStep<Record>,
+  and(): SelectQualifyConditionStep<Entry>,
 
   // TODO: andNot.
-  andNot(): SelectQualifyConditionStep<Record>,
+  andNot(): SelectQualifyConditionStep<Entry>,
 
   // TODO: andExists.
-  andExists(): SelectQualifyConditionStep<Record>,
+  andExists(): SelectQualifyConditionStep<Entry>,
 
   // TODO: andNotExists.
-  andNotExists(): SelectQualifyConditionStep<Record>,
+  andNotExists(): SelectQualifyConditionStep<Entry>,
 
   // TODO: or.
-  or(): SelectQualifyConditionStep<Record>,
+  or(): SelectQualifyConditionStep<Entry>,
 
   // TODO: orNot.
-  orNot(): SelectQualifyConditionStep<Record>,
+  orNot(): SelectQualifyConditionStep<Entry>,
 
   // TODO: orExists.
-  orExists(): SelectQualifyConditionStep<Record>,
+  orExists(): SelectQualifyConditionStep<Entry>,
 
   // TODO: orNotExists.
-  orNotExists(): SelectQualifyConditionStep<Record>
+  orNotExists(): SelectQualifyConditionStep<Entry>
 });
 
 export type {

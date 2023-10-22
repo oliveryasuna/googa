@@ -1,10 +1,10 @@
 import type {SelectForStep} from './select-for-step';
 import type {Entry as EntryType} from '../../entry';
 
-type SelectForUpdateWaitStep<Record extends EntryType> = (SelectForStep<Record> & {
-  wait(seconds: number): SelectForStep<Record>,
-  noWait(): SelectForStep<Record>,
-  skipLocked(): SelectForStep<Record>
+type SelectForUpdateWaitStep<Entry extends EntryType> = (SelectForStep<Entry> & {
+  wait(seconds: number): SelectForStep<Entry>,
+  noWait(): SelectForStep<Entry>,
+  skipLocked(): SelectForStep<Entry>
 });
 
 export type {

@@ -4,19 +4,19 @@ import type {Entry as EntryType} from '../../entry';
 import type {SelectQuery} from './select-query';
 
 // TODO: SelectCorrelatedSubqueryStep?
-type SelectUnionStep<Record extends EntryType> = (SelectFinalStep<Record> & {
+type SelectUnionStep<Entry extends EntryType> = (SelectFinalStep<Entry> & {
   // TODO: Does this work?
-  union(selectQuery: SelectQuery<Record>): SelectOrderByStep<Record>,
+  union(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
   // TODO: Does this work?
-  unionAll(selectQuery: SelectQuery<Record>): SelectOrderByStep<Record>,
+  unionAll(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
   // TODO: Does this work?
-  except(selectQuery: SelectQuery<Record>): SelectOrderByStep<Record>,
+  except(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
   // TODO: Does this work?
-  exceptAll(selectQuery: SelectQuery<Record>): SelectOrderByStep<Record>,
+  exceptAll(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
   // TODO: Does this work?
-  intersect(selectQuery: SelectQuery<Record>): SelectOrderByStep<Record>,
+  intersect(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
   // TODO: Does this work?
-  intersectAll(selectQuery: SelectQuery<Record>): SelectOrderByStep<Record>
+  intersectAll(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>
 });
 
 export type {

@@ -5,7 +5,7 @@ import type {UniqueKey} from './unique-key';
 import type {ForeignKey} from './foreign-key';
 import type {Column} from './column';
 
-// TODO: Type-safe record.
+// TODO: Type-safe entry.
 //       Make sure to pass to `TableLike` and `SelectField`.
 type Table<This extends Table<This, Catalog, Schema>, Catalog extends CatalogType<Catalog>, Schema extends SchemaType<Schema, Catalog>> =
     (TableLike<any> & GroupField & SelectField<any> & {

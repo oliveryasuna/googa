@@ -1,30 +1,30 @@
 import type {SelectWindowStep} from './select-window-step';
 import type {Entry as EntryType} from '../../entry';
 
-type SelectHavingConditionStep<Record extends EntryType> = (SelectWindowStep<Record> & {
+type SelectHavingConditionStep<Entry extends EntryType> = (SelectWindowStep<Entry> & {
   // TODO: and.
-  and(): SelectHavingConditionStep<Record>,
+  and(): SelectHavingConditionStep<Entry>,
 
   // TODO: andNot.
-  andNot(): SelectHavingConditionStep<Record>,
+  andNot(): SelectHavingConditionStep<Entry>,
 
   // TODO: andExists.
-  andExists(): SelectHavingConditionStep<Record>,
+  andExists(): SelectHavingConditionStep<Entry>,
 
   // TODO: andNotExists.
-  andNotExists(): SelectHavingConditionStep<Record>,
+  andNotExists(): SelectHavingConditionStep<Entry>,
 
   // TODO: or.
-  or(): SelectHavingConditionStep<Record>,
+  or(): SelectHavingConditionStep<Entry>,
 
   // TODO: orNot.
-  orNot(): SelectHavingConditionStep<Record>,
+  orNot(): SelectHavingConditionStep<Entry>,
 
   // TODO: orExists.
-  orExists(): SelectHavingConditionStep<Record>,
+  orExists(): SelectHavingConditionStep<Entry>,
 
   // TODO: orNotExists.
-  orNotExists(): SelectHavingConditionStep<Record>
+  orNotExists(): SelectHavingConditionStep<Entry>
 });
 
 export type {

@@ -4,20 +4,20 @@ import type {TableLike} from '../../table-like';
 import type {SelectOnStep} from './select-on-step';
 import type {SelectJoinPartitionByStep} from './select-join-partition-by-step';
 
-type SelectJoinStep<Record extends EntryType> = (SelectWhereStep<Record> & {
-  join(table: TableLike<any>): SelectOnStep<Record>,
-  innerJoin(table: TableLike<any>): SelectOnStep<Record>,
-  crossJoin(table: TableLike<any>): SelectJoinStep<Record>,
-  leftJoin(table: TableLike<any>): SelectJoinPartitionByStep<Record>,
-  leftOuterJoin(table: TableLike<any>): SelectJoinPartitionByStep<Record>,
-  rightJoin(table: TableLike<any>): SelectJoinPartitionByStep<Record>,
-  rightOuterJoin(table: TableLike<any>): SelectJoinPartitionByStep<Record>,
-  fullJoin(table: TableLike<any>): SelectOnStep<Record>,
-  fullOuterJoin(table: TableLike<any>): SelectOnStep<Record>,
-  naturalJoin(table: TableLike<any>): SelectJoinStep<Record>,
-  naturalLeftOuterJoin(table: TableLike<any>): SelectJoinStep<Record>,
-  naturalRightOuterJoin(table: TableLike<any>): SelectJoinStep<Record>,
-  naturalFullOuterJoin(table: TableLike<any>): SelectJoinStep<Record>
+type SelectJoinStep<Entry extends EntryType> = (SelectWhereStep<Entry> & {
+  join(table: TableLike<any>): SelectOnStep<Entry>,
+  innerJoin(table: TableLike<any>): SelectOnStep<Entry>,
+  crossJoin(table: TableLike<any>): SelectJoinStep<Entry>,
+  leftJoin(table: TableLike<any>): SelectJoinPartitionByStep<Entry>,
+  leftOuterJoin(table: TableLike<any>): SelectJoinPartitionByStep<Entry>,
+  rightJoin(table: TableLike<any>): SelectJoinPartitionByStep<Entry>,
+  rightOuterJoin(table: TableLike<any>): SelectJoinPartitionByStep<Entry>,
+  fullJoin(table: TableLike<any>): SelectOnStep<Entry>,
+  fullOuterJoin(table: TableLike<any>): SelectOnStep<Entry>,
+  naturalJoin(table: TableLike<any>): SelectJoinStep<Entry>,
+  naturalLeftOuterJoin(table: TableLike<any>): SelectJoinStep<Entry>,
+  naturalRightOuterJoin(table: TableLike<any>): SelectJoinStep<Entry>,
+  naturalFullOuterJoin(table: TableLike<any>): SelectJoinStep<Entry>
 });
 
 export type {

@@ -2,9 +2,9 @@ import type {SelectWindowStep} from './select-window-step';
 import type {Entry as EntryType} from '../../entry';
 import type {SelectHavingConditionStep} from './select-having-condition-step';
 
-type SelectHavingStep<Record extends EntryType> = (SelectWindowStep<Record> & {
+type SelectHavingStep<Entry extends EntryType> = (SelectWindowStep<Entry> & {
   // TODO: having.
-  having(): SelectHavingConditionStep<Record>
+  having(): SelectHavingConditionStep<Entry>
 });
 
 export type {
