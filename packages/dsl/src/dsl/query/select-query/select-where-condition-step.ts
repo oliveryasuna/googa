@@ -1,7 +1,7 @@
 import type {SelectGroupByStep} from './select-group-by-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectWhereConditionStep<Record extends RecordType> = (SelectGroupByStep<Record> & {
+type SelectWhereConditionStep<Record extends EntryType> = (SelectGroupByStep<Record> & {
   // TODO: and.
   and(): SelectWhereConditionStep<Record>,
 

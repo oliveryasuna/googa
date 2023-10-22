@@ -1,7 +1,7 @@
 import type {SelectWithTiesAfterOffsetStep} from './select-with-ties-after-offset-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectLimitPercentAfterOffsetStep<Record extends RecordType> = (SelectWithTiesAfterOffsetStep<Record> & {
+type SelectLimitPercentAfterOffsetStep<Record extends EntryType> = (SelectWithTiesAfterOffsetStep<Record> & {
   percent(): SelectWithTiesAfterOffsetStep<Record>
 });
 

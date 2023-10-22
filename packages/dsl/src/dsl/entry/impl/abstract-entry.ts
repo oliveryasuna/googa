@@ -1,7 +1,7 @@
-import type {Record} from '../record';
+import type {Entry} from '../entry';
 import type {Field} from '../../index';
 
-abstract class AbstractRecord implements Record {
+abstract class AbstractEntry implements Entry {
 
   private readonly __fields: Map<string, Field<unknown>> = new Map();
 
@@ -107,5 +107,5 @@ abstract class AbstractRecord implements Record {
 }
 
 export {
-  AbstractRecord
+  AbstractEntry
 };

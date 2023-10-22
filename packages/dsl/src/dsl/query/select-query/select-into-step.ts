@@ -1,9 +1,9 @@
 import type {SelectFromStep} from './select-from-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 import type {Table} from '../../../database';
 
-type SelectIntoStep<Record extends RecordType> = (SelectFromStep<Record> & {
-  into(table: Table<any, any, any>): SelectFromStep<RecordType>
+type SelectIntoStep<Record extends EntryType> = (SelectFromStep<Record> & {
+  into(table: Table<any, any, any>): SelectFromStep<EntryType>
 });
 
 export type {

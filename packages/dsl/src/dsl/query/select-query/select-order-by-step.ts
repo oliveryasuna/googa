@@ -1,7 +1,7 @@
 import type {SelectLimitStep} from './select-limit-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectOrderByStep<Record extends RecordType> = (SelectLimitStep<Record> & {
+type SelectOrderByStep<Record extends EntryType> = (SelectLimitStep<Record> & {
   // TODO: orderBy.
 });
 

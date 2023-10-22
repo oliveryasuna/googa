@@ -1,7 +1,7 @@
 import type {SelectWithTiesStep} from './select-with-ties-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectLimitPercentStep<Record extends RecordType> = (SelectWithTiesStep<Record> & {
+type SelectLimitPercentStep<Record extends EntryType> = (SelectWithTiesStep<Record> & {
   percent(): SelectWithTiesStep<Record>
 });
 

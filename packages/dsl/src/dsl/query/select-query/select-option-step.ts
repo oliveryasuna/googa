@@ -1,7 +1,7 @@
 import type {SelectUnionStep} from './select-union-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectOptionStep<Record extends RecordType> = (SelectUnionStep<Record> & {
+type SelectOptionStep<Record extends EntryType> = (SelectUnionStep<Record> & {
   option(str: string): SelectUnionStep<Record>
 });
 

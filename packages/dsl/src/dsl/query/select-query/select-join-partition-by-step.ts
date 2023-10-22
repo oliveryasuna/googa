@@ -1,7 +1,7 @@
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 import type {SelectOnStep} from './select-on-step';
 
-type SelectJoinPartitionByStep<Record extends RecordType> = (SelectOnStep<Record> & {});
+type SelectJoinPartitionByStep<Record extends EntryType> = (SelectOnStep<Record> & {});
 
 export type {
   SelectJoinPartitionByStep

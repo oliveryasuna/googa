@@ -1,10 +1,10 @@
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 import type {Condition} from '../../condition';
 import type {SelectOnConditionStep} from './select-on-condition-step';
 import type {Field} from '../../field';
 import type {SelectJoinStep} from './select-join-step';
 
-type SelectOnStep<Record extends RecordType> = {
+type SelectOnStep<Record extends EntryType> = {
   on(condition: Condition): SelectOnConditionStep<Record>,
   on(condition: Condition[]): SelectOnConditionStep<Record>,
   // TODO: Add null/undefined to boolean?

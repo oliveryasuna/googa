@@ -1,7 +1,7 @@
 import type {SelectOrderByStep} from './select-order-by-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectQualifyConditionStep<Record extends RecordType> = (SelectOrderByStep<Record> & {
+type SelectQualifyConditionStep<Record extends EntryType> = (SelectOrderByStep<Record> & {
   // TODO: and.
   and(): SelectQualifyConditionStep<Record>,
 

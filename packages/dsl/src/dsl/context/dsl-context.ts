@@ -1,5 +1,5 @@
 import type {SelectSelectStep, SelectWhereStep} from '../query';
-import type {Record as RecordType, Record1, Record2} from '../record';
+import type {Entry as EntryType, Entry1, Entry2} from '../entry';
 import type {SelectField, SelectFieldOrAsterisk} from '../field';
 import type {TableLike} from '../table-like';
 
@@ -7,22 +7,22 @@ type DslContext = {
   // `SELECT` query
   //--------------------------------------------------
 
-  selectFrom<Record extends RecordType>(table: TableLike<Record>): SelectWhereStep<Record>,
+  selectFrom<Entry extends EntryType>(table: TableLike<Entry>): SelectWhereStep<Entry>,
 
-  select(...fields: SelectFieldOrAsterisk[]): SelectSelectStep<RecordType>,
-  select<T1>(field1: SelectField<T1>): SelectSelectStep<Record1<T1>>,
-  select<T1, T2>(field1: SelectField<T1>, field2: SelectField<T2>): SelectSelectStep<Record2<T1, T2>>,
+  select(...fields: SelectFieldOrAsterisk[]): SelectSelectStep<EntryType>,
+  select<T1>(field1: SelectField<T1>): SelectSelectStep<Entry1<T1>>,
+  select<T1, T2>(field1: SelectField<T1>, field2: SelectField<T2>): SelectSelectStep<Entry2<T1, T2>>,
   // TODO: More.
 
-  selectDistinct(...fields: SelectField<any>[]): SelectSelectStep<RecordType>,
-  selectDistinct<T1>(field1: SelectField<T1>): SelectSelectStep<Record1<T1>>,
-  selectDistinct<T1, T2>(field1: SelectField<T1>, field2: SelectField<T2>): SelectSelectStep<Record2<T1, T2>>,
+  selectDistinct(...fields: SelectField<any>[]): SelectSelectStep<EntryType>,
+  selectDistinct<T1>(field1: SelectField<T1>): SelectSelectStep<Entry1<T1>>,
+  selectDistinct<T1, T2>(field1: SelectField<T1>, field2: SelectField<T2>): SelectSelectStep<Entry2<T1, T2>>,
   // TODO: More.
 
-  selectZero(): SelectSelectStep<Record1<number>>,
-  selectOne(): SelectSelectStep<Record1<number>>,
+  selectZero(): SelectSelectStep<Entry1<number>>,
+  selectOne(): SelectSelectStep<Entry1<number>>,
 
-  selectCount(): SelectSelectStep<Record1<number>>
+  selectCount(): SelectSelectStep<Entry1<number>>
 
   // TODO: `INSERT` query
   //--------------------------------------------------

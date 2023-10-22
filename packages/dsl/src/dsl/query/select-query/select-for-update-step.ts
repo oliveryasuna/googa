@@ -1,9 +1,9 @@
 import type {SelectForStep} from './select-for-step';
 import type {SelectForUpdateOfStep} from './select-for-update-of-step';
 import type {SelectFinalStep} from './select-final-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectForUpdateStep<Record extends RecordType> = (SelectForStep<Record> & {
+type SelectForUpdateStep<Record extends EntryType> = (SelectForStep<Record> & {
   // TODO: forUpdate.
   forUpdate(): SelectForUpdateOfStep<Record>,
 

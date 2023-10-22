@@ -1,7 +1,7 @@
 import type {SelectQuery} from './select-query';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectFinalStep<Record extends RecordType> = (SelectQuery<Record> & {});
+type SelectFinalStep<Record extends EntryType> = (SelectQuery<Record> & {});
 
 export type {
   SelectFinalStep

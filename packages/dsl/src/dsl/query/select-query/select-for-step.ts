@@ -1,7 +1,7 @@
 import type {SelectOptionStep} from './select-option-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectForStep<Record extends RecordType> = (SelectOptionStep<Record> & {});
+type SelectForStep<Record extends EntryType> = (SelectOptionStep<Record> & {});
 
 export type {
   SelectForStep

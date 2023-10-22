@@ -1,10 +1,10 @@
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 import type {SelectWhereStep} from './select-where-step';
 import type {TableLike} from '../../table-like';
 import type {SelectOnStep} from './select-on-step';
 import type {SelectJoinPartitionByStep} from './select-join-partition-by-step';
 
-type SelectJoinStep<Record extends RecordType> = (SelectWhereStep<Record> & {
+type SelectJoinStep<Record extends EntryType> = (SelectWhereStep<Record> & {
   join(table: TableLike<any>): SelectOnStep<Record>,
   innerJoin(table: TableLike<any>): SelectOnStep<Record>,
   crossJoin(table: TableLike<any>): SelectJoinStep<Record>,

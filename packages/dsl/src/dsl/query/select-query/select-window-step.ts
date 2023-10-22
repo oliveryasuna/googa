@@ -1,7 +1,7 @@
 import type {SelectQualifyStep} from './select-qualify-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectWindowStep<Record extends RecordType> = (SelectQualifyStep<Record> & {
+type SelectWindowStep<Record extends EntryType> = (SelectQualifyStep<Record> & {
   // TODO: window.
   window(): SelectQualifyStep<Record>
 });

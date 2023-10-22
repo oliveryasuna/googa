@@ -1,7 +1,7 @@
 import type {SelectOffsetStep} from './select-offset-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectWithTiesStep<Record extends RecordType> = (SelectOffsetStep<Record> & {
+type SelectWithTiesStep<Record extends EntryType> = (SelectOffsetStep<Record> & {
   withTies(): SelectOffsetStep<Record>
 });
 

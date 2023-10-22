@@ -1,7 +1,7 @@
 import type {SelectWindowStep} from './select-window-step';
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 
-type SelectHavingConditionStep<Record extends RecordType> = (SelectWindowStep<Record> & {
+type SelectHavingConditionStep<Record extends EntryType> = (SelectWindowStep<Record> & {
   // TODO: and.
   and(): SelectHavingConditionStep<Record>,
 

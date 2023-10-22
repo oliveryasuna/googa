@@ -1,8 +1,8 @@
-import type {Record as RecordType} from './record';
+import type {Entry as EntryType} from './entry';
 import type {QueryPart} from './query';
 
 // @ts-expect-error: TS6133 because may use in the future.
-type TableLike<Record extends RecordType> = (QueryPart & {});
+type TableLike<Record extends EntryType> = (QueryPart & {});
 
 export type {
   TableLike

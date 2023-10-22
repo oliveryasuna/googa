@@ -1,7 +1,7 @@
-import type {Record as RecordType} from '../../record';
+import type {Entry as EntryType} from '../../entry';
 import type {SelectGroupByStep} from './select-group-by-step';
 
-type SelectConnectByStep<Record extends RecordType> = (SelectGroupByStep<Record> & {});
+type SelectConnectByStep<Record extends EntryType> = (SelectGroupByStep<Record> & {});
 
 export type {
   SelectConnectByStep
