@@ -3,18 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "author": "Oliver Yasuna",
-  "type": "module",
   "workspaces": [
     "./packages/*"
   ],
+  "scripts": {
+    "clean": "npx nx run-many --target clean",
+    "build": "npx nx run-many --target build"
+  },
   "devDependencies": {
     "@lerna-lite/cli": "^2.6.0",
     "@lerna-lite/run": "^2.6.0",
-    "@swc/core": "^1.3.93",
-    "@typescript-eslint/eslint-plugin": "^6.8.0",
-    "@typescript-eslint/parser": "^6.8.0",
-    "eslint": "^8.51.0",
-    "nx": "^16.10.0",
-    "tsup": "^7.2.0"
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "eslint": "^8.52.0",
+    "nx": "^17.0.1",
+    "rimraf": "^5.0.5",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
   }
 }
