@@ -1,10 +1,14 @@
-import type {SelectWindowStep} from './select-window-step';
 import type {Entry as EntryType} from '../../entry';
-import type {SelectHavingConditionStep} from './select-having-condition-step';
+import type {Condition} from '../../condition';
+import type {Field} from '../../field';
+import type {SelectWindowStep} from './select-window-step';
 
+/**
+ * `HAVING condition` step of a `HAVING` clause.
+ */
 type SelectHavingStep<Entry extends EntryType> = (SelectWindowStep<Entry> & {
-  // TODO: having.
-  having(): SelectHavingConditionStep<Entry>
+  having(condition: Condition): SelectWindowStep<Entry>
+  having(condition: Field<boolean | null>): SelectWindowStep<Entry>
 });
 
 export type {
