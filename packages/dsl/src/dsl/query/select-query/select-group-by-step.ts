@@ -29,8 +29,12 @@ type SelectGroupByAfterGroupByStep<Entry extends EntryType> = {
   groupBy(...fields: GroupField[]): SelectGroupByGroupingElementsStep<Entry>,
 
   all(): SelectGroupByGroupingElementsStep<Entry>,
+  // TODO: `this.all().groupBy(fields)`.
+  all(...fields: GroupField[]): SelectGroupByGroupingElementsStep<Entry>,
 
-  distinct(): SelectGroupByGroupingElementsStep<Entry>
+  distinct(): SelectGroupByGroupingElementsStep<Entry>,
+  // TODO: `this.distinct().groupBy(fields)`.
+  distinct(...fields: GroupField[]): SelectGroupByGroupingElementsStep<Entry>
 };
 
 /**

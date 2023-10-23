@@ -9,6 +9,9 @@ import type {SelectOrderByStep} from './select-order-by-step';
 type SelectConnectStep<Entry extends EntryType> = (SelectQuery<Entry> & {
   union(): SelectConnectAfterConnectTypeStep<Entry>,
 
+  // TODO: `this.union().select(selectQuery)`.
+  union(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
+
   intersect(): SelectConnectAfterConnectTypeStep<Entry>,
 
   except(): SelectConnectAfterConnectTypeStep<Entry>
@@ -16,8 +19,12 @@ type SelectConnectStep<Entry extends EntryType> = (SelectQuery<Entry> & {
 
 type SelectConnectAfterConnectTypeStep<Entry extends EntryType> = {
   all(): SelectUnionSelectStep<Entry>,
+  // TODO: `this.all().select(selectQuery)`.
+  all(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>,
 
-  distinct(): SelectUnionSelectStep<Entry>
+  distinct(): SelectUnionSelectStep<Entry>,
+  // TODO: `this.distinct().select(selectQuery)`.
+  distinct(selectQuery: SelectQuery<Entry>): SelectOrderByStep<Entry>
 };
 
 type SelectUnionSelectStep<Entry extends EntryType> = {
