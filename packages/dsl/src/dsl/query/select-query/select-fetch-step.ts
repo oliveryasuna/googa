@@ -1,14 +1,13 @@
 import type {Entry as EntryType} from '../../entry';
+import type {SelectConnectStep} from './select-connect-step';
 
 /**
  * `FETCH {FIRST | NEXT} [count] {ROW | ROWS} {ONLY | WITH TIES}` step of a
  * `FETCH` clause.
  */
-// TODO: Extended type.
-// @ts-expect-error: TS6133 because will use later.
-type SelectFetchStep<Entry extends EntryType> = {
+type SelectFetchStep<Entry extends EntryType> = (SelectConnectStep<Entry> & {
   // TODO: Implement `FETCH` functions.
-};
+});
 
 export type {
   SelectFetchStep
