@@ -4,22 +4,26 @@ import type {Catalog as CatalogType} from '../catalog';
 import type {Schema} from '../schema';
 import type {ForeignKey, ReferentialAction} from '../foreign-key';
 import type {Column} from '../column';
+import type {Entry} from '../../dsl';
 
 abstract class AbstractForeignKey<
-    SourceTable extends Table<SourceTable, Catalog, SourceSchema>,
+    SourceTable extends Table<SourceTable, Catalog, SourceSchema, SourceTableEntry>,
     SourceSchema extends Schema<SourceSchema, Catalog>,
-    TargetTable extends Table<TargetTable, Catalog, TargetSchema>,
+    SourceTableEntry extends Entry,
+    TargetTable extends Table<TargetTable, Catalog, TargetSchema, TargetTableEntry>,
     TargetSchema extends Schema<TargetSchema, Catalog>,
+    TargetTableEntry extends Entry,
     Catalog extends CatalogType<Catalog>
 >
     extends _AbstractKey
-    implements ForeignKey<SourceTable, SourceSchema, TargetTable, TargetSchema, Catalog> {
+    implements ForeignKey<SourceTable, SourceSchema, SourceTableEntry, TargetTable, TargetSchema, TargetTableEntry, Catalog> {
 
   private readonly __sourceTable: SourceTable;
 
   private readonly __targetTable: TargetTable;
 
-  private readonly __columns: Map<Column<SourceTable, Catalog, SourceSchema, unknown>, Column<TargetTable, Catalog, TargetSchema, unknown>>;
+  private readonly __columns:
+      Map<Column<SourceTable, Catalog, SourceSchema, SourceTableEntry, unknown>, Column<TargetTable, Catalog, TargetSchema, TargetTableEntry, unknown>>;
 
   private readonly __onUpdate: ReferentialAction;
 
@@ -30,7 +34,8 @@ abstract class AbstractForeignKey<
       comment: string,
       sourceTable: SourceTable,
       targetTable: TargetTable,
-      columns: Map<Column<SourceTable, Catalog, SourceSchema, unknown>, Column<TargetTable, Catalog, TargetSchema, unknown>>,
+      columns:
+          Map<Column<SourceTable, Catalog, SourceSchema, SourceTableEntry, unknown>, Column<TargetTable, Catalog, TargetSchema, TargetTableEntry, unknown>>,
       onUpdate: ReferentialAction,
       onDelete: ReferentialAction
   ) {
@@ -51,7 +56,8 @@ abstract class AbstractForeignKey<
     return this.__targetTable;
   }
 
-  public get columns(): Map<Column<SourceTable, Catalog, SourceSchema, unknown>, Column<TargetTable, Catalog, TargetSchema, unknown>> {
+  public get columns():
+      Map<Column<SourceTable, Catalog, SourceSchema, SourceTableEntry, unknown>, Column<TargetTable, Catalog, TargetSchema, TargetTableEntry, unknown>> {
     return this.__columns;
   }
 

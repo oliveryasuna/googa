@@ -1,17 +1,19 @@
 import type {Table as TableType} from '../table';
 import type {Catalog as CatalogType} from '../catalog';
 import type {Schema as SchemaType} from '../schema';
+import type {Entry} from '../../dsl';
 import {AbstractField, AbstractNamed} from '../../dsl';
 import type {Column} from '../column';
 
 abstract class AbstractColumn<
-    Table extends TableType<Table, Catalog, Schema>,
+    Table extends TableType<Table, Catalog, Schema, TableEntry>,
     Catalog extends CatalogType<Catalog>,
     Schema extends SchemaType<Schema, Catalog>,
+    TableEntry extends Entry,
     Type
 >
     extends AbstractField<Type>
-    implements Column<Table, Catalog, Schema, Type> {
+    implements Column<Table, Catalog, Schema, TableEntry, Type> {
 
   private readonly __table: Table;
 

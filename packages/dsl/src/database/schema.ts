@@ -4,7 +4,7 @@ import type {Named} from '../dsl';
 
 type Schema<This extends Schema<This, Catalog>, Catalog extends CatalogType<Catalog>> = (Named & {
   catalog: Catalog,
-  tables: Table<any, Catalog, This>[]
+  tables: Table<any, Catalog, This, any>[]
 });
 
 export type {

@@ -9,9 +9,9 @@ abstract class AbstractSchema<Schema extends SchemaType<Schema, Catalog>, Catalo
 
   private readonly __catalog: Catalog;
 
-  private readonly __tables: Table<any, Catalog, Schema>[];
+  private readonly __tables: Table<any, Catalog, Schema, any>[];
 
-  public constructor(name: string, comment: string, catalog: Catalog, tables: Table<any, Catalog, Schema>[]) {
+  public constructor(name: string, comment: string, catalog: Catalog, tables: Table<any, Catalog, Schema, any>[]) {
     super(AbstractNamed.qualify(catalog, name), comment);
 
     this.__catalog = catalog;
@@ -22,7 +22,7 @@ abstract class AbstractSchema<Schema extends SchemaType<Schema, Catalog>, Catalo
     return this.__catalog;
   }
 
-  public get tables(): Table<any, Catalog, Schema>[] {
+  public get tables(): Table<any, Catalog, Schema, any>[] {
     return this.__tables;
   }
 
