@@ -5,7 +5,7 @@ import type {SelectFetchStep} from './select-fetch-step';
 /**
  * `OFFSET start {ROW | ROWS}` step of an `OFFSET` clause.
  */
-type SelectOffsetStep<Entry extends EntryType> = {
+type SelectOffsetStep<Entry extends EntryType> = (SelectFetchStep<Entry> & {
   offset(): SelectOffsetAfterOffsetStep<Entry>,
   // TODO: `this.offset().offset(start)`.
   offset(start: Field<number | null>): SelectOffsetAfterOffsetAndStartStep<Entry>,
@@ -21,7 +21,7 @@ type SelectOffsetStep<Entry extends EntryType> = {
   offsetRows(start: Field<number | null>): SelectFetchStep<Entry>,
   // TODO: `this.offset(start).rows()`.
   offsetRows(start: (number | null)): SelectFetchStep<Entry>
-};
+});
 
 /**
  * `start {ROW | ROWS}` step of an `OFFSET` clause.

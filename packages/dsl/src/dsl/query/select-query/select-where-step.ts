@@ -9,7 +9,7 @@ import type {Field} from '../../field';
  * This type allows chaining {@link SelectWhereStep#where} calls.
  */
 type SelectWhereStep<Entry extends EntryType> = (SelectGroupByStep<Entry> & {
-  where(condition: Condition): SelectWhereStep<Entry>
+  where(condition: Condition): SelectWhereStep<Entry>,
   where(condition: Field<boolean | null>): SelectWhereStep<Entry>
 });
 

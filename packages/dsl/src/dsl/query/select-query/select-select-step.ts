@@ -6,7 +6,7 @@ import type {SelectFromStep} from './select-from-step';
  * `SELECT [ALL | DISTINCT [ON (expression [, ...])]]` or
  * `* | expression [[AS] output_name] [, ...]` step of a `SELECT` statement.
  */
-type SelectSelectStep<Entry extends EntryType> = {
+type SelectSelectStep<Entry extends EntryType> = (SelectFromStep<Entry> & {
   select(): SelectSelectAfterSelectStep<Entry>,
   // TODO: `this.select().select(fields)`.
   select(...fields: [SelectFieldOrAsterisk, ...SelectFieldOrAsterisk[]]): SelectSelectAsteriskOrExpressionsStep<Entry>,
@@ -25,7 +25,7 @@ type SelectSelectStep<Entry extends EntryType> = {
   selectDistinctOn(): SelectSelectAsteriskOrExpressionsStep<Entry>,
   // TODO: `this.select().distinctOn(fields)`.
   selectDistinctOn(...fields: [SelectFieldOrAsterisk, ...SelectFieldOrAsterisk[]]): SelectSelectAsteriskOrExpressionsStep<Entry>
-};
+});
 
 /**
  * `[ALL | DISTINCT [ON (expression [, ...])]]` or

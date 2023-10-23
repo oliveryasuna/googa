@@ -7,9 +7,9 @@ import type {SelectWhereStep} from './select-where-step';
 /**
  * `FROM from_item [, ...]` step of a `FROM` clause.
  */
-type SelectFromStep<Entry extends EntryType> = {
+type SelectFromStep<Entry extends EntryType> = (SelectWhereStep<Entry> & {
   from(...tables: [TableLike<any>, ...TableLike<any>[]]): SelectFromJoinStep<Entry>
-};
+});
 
 /**
  * Join utility for the `FROM` clause.
