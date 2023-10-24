@@ -1,9 +1,10 @@
-import type {DefaultCatalog} from './default-catalog';
-import {PublicSchema} from './public-schema';
-import {ColumnImpl, UniqueKeyImpl} from '../../../src';
-import AbstractTable from '../../../src/database/impl/abstract-table';
+import type {DefaultCatalog} from '../default-catalog';
+import {PublicSchema} from '../public-schema';
+import {ColumnImpl, UniqueKeyImpl} from '../../../../src';
+import AbstractTable from '../../../../src/database/impl/abstract-table';
+import type {CustomerEntry} from './entries/customer-entry';
 
-class CustomerTable extends AbstractTable<CustomerTable, DefaultCatalog, PublicSchema> {
+class CustomerTable extends AbstractTable<CustomerTable, DefaultCatalog, PublicSchema, CustomerEntry> {
 
   public static readonly CUSTOMER = new CustomerTable();
 
